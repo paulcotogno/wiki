@@ -192,6 +192,7 @@ cron.schedule('*/10 * * * *', async () => {
   for (let i = 0; i < accounts.length; i++) {
     await openCard({ email: accounts[i].email, mdp: accounts[i].mdp });
   }
+  await openCard({ email: EMAIL, mdp: MDP });
   console.timeEnd('ouverture')
 });
 
