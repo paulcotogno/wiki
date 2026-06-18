@@ -3,14 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "scripts": {
-    "dev": "tsc script.ts && node script.js",
-    "build": "tsc script.ts",
-    "start": "node script.js"
+    "dev": "tsc && node dist/script.js",
+    "build": "tsc",
+    "start": "node dist/script.js"
   },
   "dependencies": {
     "dotenv": "^17.4.2",
@@ -19,6 +18,7 @@
     "typescript": "^6.0.3"
   },
   "devDependencies": {
+    "@tsconfig/recommended": "^1.0.13",
     "@types/node": "^25.9.3"
   }
 }
