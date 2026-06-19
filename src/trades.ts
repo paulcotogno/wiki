@@ -80,7 +80,8 @@ export const tradeCard = async ({ email, mdp }: Account) => {
     })
     await Add;
 
-    await page.locator('body > div:last-of-type > div > div:nth-child(5) > div > button:last-of-type').click();
+    await page.locator('body > div:last-of-type > div > div:nth-child(5) > div > button:last-of-type').setTimeout(2000).click()
+      .catch(err => { throw Error('no button send trade') });
 
     await timeout();
   } catch (error) {
