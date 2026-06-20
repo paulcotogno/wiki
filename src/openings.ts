@@ -10,7 +10,7 @@ const queries = {
 
 export const openCard = async ({ email, mdp }: Account) => {
     const { OPEN_START, OPEN_NEXT_CARD, OPEN_END } = queries;
-    
+
     let browser;
 
     try {
@@ -24,20 +24,20 @@ export const openCard = async ({ email, mdp }: Account) => {
         // CONNECT THE USER
         await connect(page, { email, mdp });
 
-        
+
         await page.locator(OPEN_START).setTimeout(2000).click()
             .catch(err => { throw Error('PAS DE PACK A OUVRIR') });
         await timeout();
-        
+
         await page.locator(OPEN_NEXT_CARD).click();
         await timeout();
-        
+
         await page.locator(OPEN_NEXT_CARD).click();
         await timeout();
-        
+
         await page.locator(OPEN_NEXT_CARD).click();
         await timeout();
-        
+
         await page.locator(OPEN_NEXT_CARD).click();
         await timeout();
 

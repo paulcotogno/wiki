@@ -26,7 +26,7 @@ export const autoAccept = async () => {
           await timeout(5000);
           call();
         } catch (err) {
-          resolve(() => {});
+          resolve(() => { });
           return;
         }
       }

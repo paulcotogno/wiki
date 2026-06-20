@@ -51,6 +51,7 @@ export const tradeCard = async ({ email, mdp }: Account) => {
           try {
             await page.locator('body > div:last-of-type > div > div:nth-child(4) > div > div > div:last-of-type > div:last-of-type > button:last-of-type').setTimeout(1000).click();
           } catch (err) {
+            console.log('CATCH BUTTON NEXT PAGE');
             resolve(() => {});
             return;
           }
@@ -61,6 +62,7 @@ export const tradeCard = async ({ email, mdp }: Account) => {
         if (i === 0) {
           await page.locator('body > div:last-of-type > div > div:nth-child(4) > div > div > div:nth-child(2) > div > button').setTimeout(300).click()
             .catch(e => {
+              console.log('CATCH CLICK ON FIRST CARD');
               resolve(() => {});
               return;
             });
@@ -70,6 +72,7 @@ export const tradeCard = async ({ email, mdp }: Account) => {
         try {
           await page.locator('body > div:last-of-type > div > div:nth-child(4) > div > div > div:nth-child(3) > div > button').setTimeout(1000).click();
         } catch (err) {
+          console.log('CATCH CLICK ON NEXT CARD n: ' + i);
           resolve(() => {});
           return;
         }
